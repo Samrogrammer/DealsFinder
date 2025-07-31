@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the best fashion deals on DealsFinder - Save on clothing, shoes, accessories and more">
+    <meta name="keywords" content="fashion deals, clothing sale, discount shoes, accessories, online shopping deals">
+    <title>Fashion Deals - DealsFinder | Save on Clothing, Shoes & Accessories</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Fashion_Styles.css">
+    <link rel="canonical" href="https://dealsfinder.com/fashion.html">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-tags"></i> DealsFinder
+            </a>
+            <nav class="nav-links">
+                <a href="fashion.html" class="nav-link active" aria-current="page"><i class="fas fa-tshirt"></i> Fashion</a>
+                <a href="health.html" class="nav-link"><i class="fas fa-heartbeat"></i> Health</a>
+                <a href="#" class="nav-link"><i class="fas fa-star"></i> Top Deals</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero fashion-hero">
+        <div class="hero-content">
+            <h1>Fashion Deals</h1>
+            <p>Find exclusive offers on top fashion products and brands.</p>
+            <a href="#deals-section" class="cta-button">Browse Deals</a>
+        </div>
+    </section>
+
+    <!-- Hot Deals Carousel -->
+    <section class="hot-deals-section">
+        <div class="section-header">
+            <h2><i class="fas fa-fire"></i> Hot Fashion Deals</h2>
+            <p>Limited-time offers you don't want to miss!</p>
+        </div>
+        <div id="hot-deals-container" class="hot-deals-container">
+            <!-- Hot deals will be populated by JavaScript -->
+            <div class="skeleton-loader hot-deal-skeleton"></div>
+            <div class="skeleton-loader hot-deal-skeleton"></div>
+            <div class="skeleton-loader hot-deal-skeleton"></div>
+        </div>
+    </section>
+
+    <!-- Main Deals Section -->
+    <main class="deals-container" id="deals-section">
+        <div class="section-header">
+            <h2>All Fashion Deals</h2>
+            <p id="results-count">Showing all deals</p>
+        </div>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter" class="filter-select" aria-label="Filter by category">
+                        <option value="all">All Categories</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="activewear">Activewear</option>
+                        <option value="outerwear">Outerwear</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="gender-filter">For Who</label>
+                    <select id="gender-filter" class="filter-select" aria-label="Filter by gender">
+                        <option value="all">Everyone</option>
+                        <option value="women">Women</option>
+                        <option value="men">Men</option>
+                        <option value="kids">Kids</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="price-range">Price Range</label>
+                    <select id="price-range" class="filter-select" aria-label="Filter by price range">
+                        <option value="all">All Prices</option>
+                        <option value="under-50">Under $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="over-200">Over $200</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="deal-type">Deal Type</label>
+                    <select id="deal-type" class="filter-select" aria-label="Filter by deal type">
+                        <option value="all">All Deals</option>
+                        <option value="flash">Flash Sales</option>
+                        <option value="clearance">Clearance</option>
+                        <option value="seasonal">Seasonal</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-filter">Sort By</label>
+                    <select id="sort-filter" class="filter-select" aria-label="Sort results">
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="discount">Highest Discount</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading indicator -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <p>Finding the best deals for you...</p>
+        </div>
+
+        <!-- Deals Grid -->
+        <div id="deals-grid" class="deals-grid">
+            <!-- Skeleton loaders while content loads -->
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+            <div class="skeleton-loader deal-card-skeleton"></div>
+        </div>
+        
+        <!-- Newsletter Sign-up -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h3><i class="fas fa-envelope"></i> Get Notified About New Deals</h3>
+                    <p>Subscribe to our newsletter and never miss out on exclusive fashion deals!</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" class="newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About DealsFinder</h3>
+                <p>Your go-to platform for the latest and greatest deals on fashion and health products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DealsFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="fashion-deals.js"></script>
+</body>
+</html>
